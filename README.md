@@ -56,20 +56,15 @@ Features
 * can be integrated with your existing Go web applications
 
 
-Install
-=======
+Install and run
+===============
 
 ```bash
-go get github.com/FZambia/nord
+git clone https://github.com/FZambia/nord nord/
+cd nord/
+go build
+./nord
 ```
-
-Run
-===
-
-```bash
-nord
-```
-
 
 API
 ===
@@ -118,7 +113,7 @@ You can change some defaults using command-line options:
 * ``--prefix`` - url path prefix for main handler (default "", i.e. service will be available on "/" path)
 
 ```bash
-nord --address=127.0.0.1 --port=3000 --timeout=5000
+./nord --address=127.0.0.1 --port=3000 --timeout=5000
 ```
 
 Using command above we started Nord on http://localhost:3000/ . After this you can open your browser and go to http://localhost:3000/?providers=twitter&url=http://my.com
@@ -131,7 +126,7 @@ Caching
 Caching responses supported via Redis. To enable response caching with default settings use command-line option ``--cache``
 
 ```bash
-nord --cache
+./nord --cache
 ```
 
 Data cached for each provider/url pair.
@@ -141,7 +136,7 @@ By default cache timeout is 60 seconds. You can change it using ``--cache-timeou
 Also you can change redis address, port and set auth password using ``--redis-address``, ``--redis-port``, ``--redis-password`` options respectively.
 
 ```bash
-nord --cache --cache-timeout=300 --redis-host=127.0.0.1 --redis-port=6379 --redis-password="pass"
+./nord --cache --cache-timeout=300 --redis-host=127.0.0.1 --redis-port=6379 --redis-password="pass"
 ```
 
 
