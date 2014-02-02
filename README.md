@@ -48,7 +48,7 @@ At moment the following social networks/providers are supported:
 
 
 Features
-========
+--------
 
 * dead-simple API
 * JSONP support
@@ -57,7 +57,7 @@ Features
 
 
 Install and run
-===============
+---------------
 
 ```bash
 git clone https://github.com/FZambia/nord nord/
@@ -66,8 +66,11 @@ go build
 ./nord
 ```
 
+Or just download Nord single precompiled binary file for your platform [here](https://github.com/FZambia/nord/releases/latest) 
+
+
 API
-===
+---
 
 Available GET parameters:
 
@@ -78,7 +81,7 @@ Available GET parameters:
 
 
 From web browser
-================
+----------------
 
 Nord supports JSONP, here is an example of jQuery jsonp request from web browser:
 
@@ -103,7 +106,7 @@ $(function() {
 ```
 
 Configuration
-=============
+-------------
 
 You can change some defaults using command-line options:
 
@@ -121,7 +124,7 @@ Using command above we started Nord on http://localhost:3000/ . After this you c
 There are also options for configuring caching. See them below.
 
 Caching
-=======
+-------
 
 Caching responses supported via Redis. To enable response caching with default settings use command-line option ``--cache``
 
@@ -141,7 +144,7 @@ Also you can change redis address, port and set auth password using ``--redis-ad
 
 
 Integration
-===========
+-----------
 
 Nord functionality can be integrated into your existing Go web application. Below a simple example of such integration:
 
@@ -172,13 +175,13 @@ func main() {
 Now Nord available on http://localhost:8000/nord/
 
 License
-=======
+-------
 
 MIT
 
 
 Contribute
-==========
+----------
 
 Pull requests are welcome
 

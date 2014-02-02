@@ -9,6 +9,7 @@ const (
 	ERROR_NOT_FOUND     = "not found"
 	ERROR_TIMED_OUT     = "timed out"
 	ERROR_NOT_SUPPORTED = "not supported"
+	ERROR_BAD_RESPONSE  = "bad response"
 )
 
 type ProviderResponse struct {
@@ -38,6 +39,8 @@ func GetProviderByName(name string, client *http.Client) (Provider, error) {
 		return NewLinkedinProvider(client), nil
 	case "vk":
 		return NewVkProvider(client), nil
+	case "ok":
+		return NewOkProvider(client), nil
 	default:
 		return nil, errors.New(ERROR_NOT_SUPPORTED)
 	}
