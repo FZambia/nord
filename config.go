@@ -3,8 +3,9 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/FZambia/nord/libnord"
 	"time"
+
+	"github.com/FZambia/nord/libnord"
 )
 
 type Config struct {

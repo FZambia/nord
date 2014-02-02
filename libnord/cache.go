@@ -3,8 +3,9 @@ package libnord
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/garyburd/redigo/redis"
 	"log"
+
+	"github.com/garyburd/redigo/redis"
 )
 
 const cachePrefix = "nord"

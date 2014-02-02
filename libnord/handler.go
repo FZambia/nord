@@ -4,14 +4,15 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/codegangsta/martini"
-	"github.com/garyburd/redigo/redis"
 	"net/http"
 	"os"
 	"regexp"
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/codegangsta/martini"
+	"github.com/garyburd/redigo/redis"
 )
 
 type ServiceMap struct {

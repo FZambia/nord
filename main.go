@@ -1,8 +1,9 @@
 package main
 
 import (
-	"github.com/FZambia/nord/libnord"
 	"net/http"
+
+	"github.com/FZambia/nord/libnord"
 )
 
 func main() {

@@ -23,21 +23,22 @@ type Provider interface {
 }
 
 func GetProviderByName(name string, client *http.Client) (Provider, error) {
-	if name == "facebook" {
+	switch name {
+	case "facebook":
 		return NewFacebookProvider(client), nil
-	} else if name == "googleplus" {
+	case "googleplus":
 		return NewGoogleplusProvider(client), nil
-	} else if name == "twitter" {
+	case "twitter":
 		return NewTwitterProvider(client), nil
-	} else if name == "pinterest" {
+	case "pinterest":
 		return NewPinterestProvider(client), nil
-	} else if name == "delicious" {
+	case "delicious":
 		return NewDeliciousProvider(client), nil
-	} else if name == "linkedin" {
+	case "linkedin":
 		return NewLinkedinProvider(client), nil
-	} else if name == "vk" {
+	case "vk":
 		return NewVkProvider(client), nil
-	} else {
+	default:
 		return nil, errors.New(ERROR_NOT_SUPPORTED)
 	}
 }
