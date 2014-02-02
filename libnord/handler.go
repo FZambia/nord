@@ -70,7 +70,7 @@ func isResponseReady(response map[string]interface{}, providerList []string) boo
 	return len(response) == len(providerList)
 }
 
-func GoHandler(service *ServiceMap, w http.ResponseWriter, r *http.Request) (int, string) {
+func NordHandler(service *ServiceMap, w http.ResponseWriter, r *http.Request) (int, string) {
 
 	// extract request parameters from request
 	r.ParseForm()
@@ -173,7 +173,7 @@ func GetHandler(conf *Config) *martini.ClassicMartini {
 
 	m := martini.Classic()
 
-	m.Get(trimSuffix(conf.Prefix, "/")+"/", GoHandler)
+	m.Get(trimSuffix(conf.Prefix, "/")+"/", NordHandler)
 
 	// shared HTTP client
 	client := &http.Client{}
