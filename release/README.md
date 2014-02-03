@@ -8,6 +8,11 @@ This is an adapted script from websocketd project by Joe Walnes. Thanks!
 *   Inferring the next nord release version
 *   Cross-compiling websocketd for all required platforms
 
+Note
+
+* darwin binary must be built on Mac OS to work
+* script uses Mac OS X specific greadlink program (replace it with readlink when building on Linux)
+
 To build the packages for all platforms:
 
 ```bash
