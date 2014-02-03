@@ -45,6 +45,7 @@ At moment the following social networks/providers are supported:
 * Delicious (`delicious`)
 * LinkedIn (`linkedin`)
 * VK (`vk`)
+* Odnoklassniki (`ok`)
 
 
 Features
