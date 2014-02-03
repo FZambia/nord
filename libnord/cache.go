@@ -3,7 +3,6 @@ package libnord
 import (
 	"encoding/json"
 	"fmt"
-	"log"
 
 	"github.com/garyburd/redigo/redis"
 )
@@ -16,16 +15,17 @@ func getRedisConnection(config *Config) (redis.Conn, error) {
 	}
 	conn, err := redis.Dial("tcp", config.RedisAddr)
 	if err != nil {
-		log.Println("Redis connection error:", err)
+		config.Logger.Println("Redis connection error", err)
 		return nil, err
 	}
 	if len(config.RedisPassword) > 0 {
 		if _, err := conn.Do("AUTH", config.RedisPassword); err != nil {
 			conn.Close()
+			config.Logger.Println("Redis auth error:", err)
 			return nil, err
 		}
 	}
-	log.Println("connected with Redis on", config.RedisAddr)
+	config.Logger.Println("connected to Redis on", config.RedisAddr)
 	return conn, err
 }
 
@@ -33,7 +33,6 @@ func reconnectToRedis(service *ServiceMap) {
 	service.conn.Close()
 	conn, err := getRedisConnection(service.config)
 	if err != nil {
-		log.Println(err)
 		return
 	}
 	service.conn = conn

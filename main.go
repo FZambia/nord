@@ -9,5 +9,8 @@ import (
 func main() {
 	config := parseCommandLineOptions()
 	m := libnord.GetHandler(config.Config)
-	http.ListenAndServe(config.Addr, m)
+	config.Config.Logger.Println("running Nord on", config.Addr)
+	if err := http.ListenAndServe(config.Addr, m); err != nil {
+		config.Config.Logger.Fatal(err)
+	}
 }

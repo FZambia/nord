@@ -15,7 +15,6 @@ type Config struct {
 
 func parseCommandLineOptions() Config {
 	var mainConfig Config
-	var config libnord.Config
 
 	portFlag := flag.Int("port", 3000, "HTTP port to listen on")
 	addressFlag := flag.String("address", "0.0.0.0", "Interface to bind to (e.g. 127.0.0.1)")
@@ -32,6 +31,8 @@ func parseCommandLineOptions() Config {
 
 	mainConfig.Addr = fmt.Sprintf("%s:%d", *addressFlag, *portFlag)
 
+	config := libnord.DefaultConfig
+
 	config.Timeout = time.Duration(*timeoutFlag) * time.Millisecond
 	config.Prefix = *prefixFlag
 
@@ -40,6 +41,6 @@ func parseCommandLineOptions() Config {
 	config.RedisAddr = fmt.Sprintf("%s:%d", *redisAddressFlag, *redisPortFlag)
 	config.RedisPassword = *redisPasswordFlag
 
-	mainConfig.Config = &config
+	mainConfig.Config = config
 	return mainConfig
 }

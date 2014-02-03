@@ -1,6 +1,8 @@
 package libnord
 
 import (
+	"log"
+	"os"
 	"time"
 )
 
@@ -11,6 +13,7 @@ type Config struct {
 	CacheTimeout  int
 	RedisAddr     string
 	RedisPassword string
+	Logger        *log.Logger
 }
 
 var DefaultConfig = &Config{
@@ -20,4 +23,5 @@ var DefaultConfig = &Config{
 	CacheTimeout:  60,
 	RedisAddr:     ":6379",
 	RedisPassword: "",
+	Logger:        log.New(os.Stdout, "[nord] ", 3),
 }
