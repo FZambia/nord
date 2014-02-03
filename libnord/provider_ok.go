@@ -24,7 +24,7 @@ func (provider *OkProvider) GetUrlInfo(url string) *ProviderResponse {
 		"ref":    url,
 	}
 
-	baseUrl := "https://odnoklassniki.ru/dk"
+	baseUrl := "http://odnoklassniki.ru/dk"
 	endpoint := urlencode(baseUrl, params)
 
 	resp := &ProviderResponse{

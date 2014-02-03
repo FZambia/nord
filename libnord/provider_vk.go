@@ -24,7 +24,7 @@ func (provider *VkProvider) GetUrlInfo(url string) *ProviderResponse {
 		"index": "1",
 	}
 
-	baseUrl := "https://vk.com/share.php"
+	baseUrl := "http://vk.com/share.php"
 	endpoint := urlencode(baseUrl, params)
 
 	resp := &ProviderResponse{

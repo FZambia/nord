@@ -23,7 +23,7 @@ func (provider *FacebookProvider) GetUrlInfo(url string) *ProviderResponse {
 		"urls":   url,
 	}
 
-	baseUrl := "https://api.facebook.com/restserver.php"
+	baseUrl := "http://api.facebook.com/restserver.php"
 	endpoint := urlencode(baseUrl, params)
 
 	resp := &ProviderResponse{

@@ -22,7 +22,7 @@ func (provider *LinkedinProvider) GetUrlInfo(url string) *ProviderResponse {
 		"url":      url,
 	}
 
-	baseUrl := "https://www.linkedin.com/countserv/count/share"
+	baseUrl := "http://www.linkedin.com/countserv/count/share"
 	endpoint := urlencode(baseUrl, params)
 
 	resp := &ProviderResponse{

@@ -22,7 +22,7 @@ func (provider *PinterestProvider) GetUrlInfo(url string) *ProviderResponse {
 		"url":      url,
 	}
 
-	baseUrl := "https://api.pinterest.com/v1/urls/count.json"
+	baseUrl := "http://api.pinterest.com/v1/urls/count.json"
 	endpoint := urlencode(baseUrl, params)
 
 	resp := &ProviderResponse{
