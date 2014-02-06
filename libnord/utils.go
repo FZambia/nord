@@ -5,15 +5,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strings"
 )
-
-func trimSuffix(s, suffix string) string {
-	if strings.HasSuffix(s, suffix) {
-		s = s[:len(s)-len(suffix)]
-	}
-	return s
-}
 
 func urlencode(baseUrl string, arguments map[string]string) string {
 	params := url.Values{}

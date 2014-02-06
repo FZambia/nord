@@ -174,7 +174,7 @@ func GetHandler(conf *Config) *martini.ClassicMartini {
 
 	m := martini.Classic()
 
-	m.Get(trimSuffix(conf.Prefix, "/")+"/", NordHandler)
+	m.Get(strings.TrimSuffix(conf.Prefix, "/")+"/", NordHandler)
 
 	// shared HTTP client
 	client := &http.Client{}
