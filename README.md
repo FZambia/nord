@@ -3,7 +3,7 @@ Nord
 
 Download Nord binaries for your platform [here](https://github.com/FZambia/nord/releases/latest) 
 
-Social network share, like, tweet, pin statistics for URL address, written in Go. Server originally developed for bluffy.net (not yet released)
+Social network share, like, tweet, pin statistics for URL address, written in Go.
 
 To get information about URL all you need is send HTTP GET request on running Nord:
 
